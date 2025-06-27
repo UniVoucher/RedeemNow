@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedeemNow - Gasless UniVoucher Redemption</title>
+    <link rel="icon" type="image/png" href="redeemnow-st0.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="redeemnow-st0.png" alt="RedeemNow Logo" style="width: 64px; height: 64px; margin-bottom: 5px;">
+            <h1>RedeemNow</h1>
+            <p>Redeem <a href="https://univoucher.com" target="_blank" style="color: #667eea; text-decoration: none;">UniVoucher</a> crypto gift cards without connecting a wallet or paying gas fees</p>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step-dot active" id="dot1"></div>
+            <div class="step-dot" id="dot2"></div>
+            <div class="step-dot" id="dot3"></div>
+        </div>
+
+        <!-- Step 1: Enter Card Details -->
+        <div class="step active" id="step1">
+            <div class="form-group">
+                <label for="cardId">Card ID</label>
+                <input type="text" id="cardId" placeholder="Enter card ID (e.g., 1234567)" />
+            </div>
+
+            <div class="form-group">
+                <label for="cardSecret">Card Secret</label>
+                <input type="text" id="cardSecret" placeholder="XXXXX-XXXXX-XXXXX-XXXXX" maxlength="23" />
+            </div>
+
+            <button class="button" id="checkCardBtn">
+                <span class="loading hidden"></span>
+                Check Card
+            </button>
+        </div>
+
+        <!-- Step 2: Card Information -->
+        <div class="step" id="step2">
+            <div class="card-info" id="cardInfo">
+                <!-- Card info will be populated here -->
+            </div>
+
+            <div class="form-group">
+                <label for="recipientAddress">Recipient Address</label>
+                <input type="text" id="recipientAddress" placeholder="0x..." />
+            </div>
+
+            <button class="button" id="redeemBtn">
+                <span class="loading hidden"></span>
+                Redeem Now
+            </button>
+
+            <button class="button" id="backBtn" style="background: #718096; margin-top: 10px;">
+                Back
+            </button>
+        </div>
+
+        <!-- Step 3: Success -->
+        <div class="step" id="step3">
+            <div class="message success" id="successMessage">
+                <!-- Success message will be populated here -->
+            </div>
+
+            <button class="button" id="newRedemptionBtn">
+                Redeem Another Card
+            </button>
+        </div>
+
+        <!-- Error messages -->
+        <div class="message error hidden" id="errorMessage"></div>
+
+        <div class="footer">
+            This is an <a href="https://github.com/univoucher/redeemnow" target="_blank">open-source</a> web app. Free to clone and use.<br>
+            Built using <a href="https://cursor.com" target="_blank">Cursor IDE</a>, <a href="https://claude.ai" target="_blank">Claude 4 Sonnet</a>, and <a href="https://docs.univoucher.com/developers/mcp" target="_blank">UniVoucher MCP</a>.<br><br>
+            Powered by the <a href="https://docs.univoucher.com/partner-program" target="_blank">UniVoucher Partner Program</a>, which helps cover redemption fees.<br><br>
+            <strong>Developers:</strong> You can redeem cards without gas using our <a href="/api" target="_blank">RedeemNow API</a> (1% partner fees apply).
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
